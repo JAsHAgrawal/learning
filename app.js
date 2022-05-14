@@ -9,7 +9,7 @@ const { render } = require('ejs');
 const app = express();
 
 // connect to mongodb & listen for requests
-const dburl = 'mongodb+srv://xpainx:1234@cluster0.3bcpj.mongodb.net/nodeis?retryWrites=true&w=majority'
+const dburl = `${process.env.mongoDBuri}`
 
 mongoose.connect(dburl, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(result => app.listen(3000))
